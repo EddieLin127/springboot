@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>厝動 HomeGym</title>
+    <meta name="robots" content="index,follow">
+    <meta name="description" content="請輸入"><!-- 填寫網頁的簡介 -->
+    <link rel="icon" href="./imag/hg_logo/logo_black_white.png" />
+
+    <!-- Bootstrap5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- font-awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Swiper插件<幻燈片使用> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.0.6/swiper-bundle.css" integrity="sha512-k/ajQk10gq0MXEJ3gDVRQe4ZkmXDsGGDa4D5PWCQDH1drJmipCfhZHjj+WsXqyEs0dlo1gJmaPbviTb8yLC5hg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- 套用CSS -->
+    <link rel="stylesheet" href="./css/all.min.css">
+</head>
+<body>
+
+    
+       
+
+    <!-- 導覽列 10/3更新-->
+    <nav class="main_nav navbar navbar-expand-lg navbar-light pe-3 bg-primary fixed-top navbar_top border-bottom border-primary">
+        <div class="container-fluid">
+            <div class="navbar-brand d-flex align-items-center">
+                <img class="m-auto" style="height: 40px;" src="./imag/hg_logo/logo.svg" alt="">
+                <a class="text-white" href="/index">厝動 HomeGym</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <div class="search d-flex ms-auto position-relative col-4">
+                    <input class="form-control" type="text" placeholder="關鍵字搜尋" aria-label="default input example"> 
+                    <i class="fa fa-search position-absolute end-0 fs-4 p-1 pe-2" ></i>
+                </div>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
+                    <div id="marker"></div>
+                    <li class="nav-item">
+                        <a class="nav-link ms-3 text-white" aria-current="page" href="/shopping"><i class="fa fa-caret-square-o-right text-white" aria-hidden="true"></i>
+                        商城</a>
+                    </li>
+                    <li class="shoppping_car nav-item dropdown">
+                        <a class="nav-link ms-3 text-white text-center" href="/shoppingCar"><i class="fa fa-shopping-cart text-white" aria-hidden="true"></i>
+                        購物車</a>
+                        <div class="dropdown-menu dropdown-menu-right" style="min-width:400px;min-height:100px;" id="dropdown-menu">
+                            <div class="px-3 py-2 " id="menu">
+                                <!-- 動態新增 -->
+                            </div>   
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown text-center">
+                            <a class="nav-link ms-3 dropdown dropdown-toggle text-white" id="mycourse_areas_dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-window-maximize text-white" aria-hidden="true"></i>
+                            我的課程</a>
+                            <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="mycourse_areas_dropdown">
+                                <li><a class="dropdown-item text-center" href="/mycoursesAreasBuyedCourse">已買課程</a></li>
+                                <li><a class="dropdown-item text-center" href="/mycoursesAreasKeepCourse">收藏課程</a></li>
+                                <li><a class="dropdown-item text-center" href="/myFitnessPlan">健身計畫</a></li>
+                                <li><a class="dropdown-item text-center start_btn" href="#" data-bs-toggle="modal" data-bs-target="#quiz_info">健身知識</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <img class="member_img ms-4 rounded-circle" src="https://fakeimg.pl/50x50/" alt="...">
+                    <li class="nav-item">
+                        <div class="top ms-3 text-center">
+                            <a class="text-white" href="" data-bs-toggle="modal" data-bs-target="#signup">註冊</a>
+                            <a class="text-white" href="" data-bs-toggle="modal" data-bs-target="#login">登入</a>
+                        </div>
+                        <div class="buttom text-center ms-3 dropdown">
+                            <a class="dropdown-toggle text-white" href="#" id="member_areas_dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">會員專區</a>
+                            <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="member_areas_dropdown">
+                                <li><a class="dropdown-item text-center" href="/memberAreasIntroduction">會員中心</a></li>
+                                <li><a class="dropdown-item text-center" href="/memberAreasApplicationCoach">成為教練</a></li>
+                                <li><a class="dropdown-item text-center" href="/coachingAreasIntroduction">教練專區</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </nav>
+
+    <div id="nav_content">
+        
+        
+        <!-- 登入<彈跳視窗> 驗證OK -->
+        <div class="login_modal modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered ">
+                <div class="modal-content ">
+                    <div class="modal-header">
+                        <h5 class="modal-title m-auto" id="exampleModalLabel">登入帳號</h5>
+                    </div>
+                    <form id="needs_validation_login" novalidate>
+                        <div class="modal-body">
+                            <div class="login_btn d-flex flex-column w-50 align-items-center m-auto mb-3">
+                                <div class="btn btn-outline-primary mb-2"><i class="fa fa-facebook-official fs-5 me-2" aria-hidden="true"></i>
+                                    Facebook登入</div>
+                                <div class="btn btn-outline-primary mb-2"><i class="fa fa-google fs-5 me-2" aria-hidden="true"></i>
+                                    goolge登入</div>
+                            </div>
+                            <h5 class="text-center mb-2 mt-4">或以 HomeGym 帳號密碼登入</h5>
+                            <div class="form-group">
+                                <label for="member_id" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="member_id" placeholder="" v-model.trim="login.email" required>
+                                <label for="password" class="form-label">密碼</label>
+                                <!-- 密碼正則表達式 -->
+                                <input class="form-control" type="password" id="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^]{6,16}$" v-model.trim="login.password" required></input>
+                                <p class="text-danger invalid-feedback">信箱或密碼錯誤</p>
+                            </div>
+                        </div>
+                        <div class="text-end pe-3">
+                            <a href="#" >忘記密碼</a>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="m-auto">
+                                <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">取消</button>
+                                <button type="submit" @click="memberLogin()" class="btn btn-primary">登入</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+        <!-- 註冊<彈跳視窗> -->
+        <div class="modal fade" id="signup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title m-auto" id="exampleModalLabel">註冊帳號</h5>
+                    </div>
+                    <form id="needs_validation_signup">
+                        <div class="modal-body">
+                            <div class="row align-items-center mb-4">
+                                <div class="col-auto">
+                                    <label for="member_email" class="form-label">信箱</label>
+                                </div>
+                                <div class="col">
+                                    <input type="email" class="form-control" id="member_email" placeholder="請輸入Email" v-model.trim="signup.email">
+                                    <span><!-- 錯誤提示位置 --></span>
+                                </div>
+                            </div>
+                            <div class="row align-items-center mb-4">
+                                <div class="col-auto">
+                                    <label for="pwd" class="form-label">密碼</label>
+                                </div>
+                                <div class="col">
+                                    <input class="form-control" type="password" id="pwd" placeholder="" v-model.trim="signup.password"></input>
+                                    <span><!-- 錯誤提示位置 --></span>
+                                </div>
+                            </div>
+                            <div class="row align-items-center mb-4">
+                                <div class="col-auto">
+                                    <label for="repassword" class="form-label">再輸入一次密碼</label>
+                                </div>
+                                <div class="col">
+                                    <!-- 綁定PleasPwd方法 -->
+                                    <input class="form-control" type="password" id="repassword" onfocus="pleasePwd()"></input>
+                                    <span><!-- 錯誤提示位置 --></span>
+                                </div>
+                            </div>
+                            <div class="row align-items-center mb-4">
+                                <div class="col-auto">
+                                    <label for="member_name" class="form-label" >姓名</label>
+                                </div>
+                                <div class="col">
+                                    <input class="form-control" id="member_name" v-model.trim="signup.name"></input>
+                                    <span><!-- 錯誤提示位置 --></span>
+                                </div>
+                            </div>
+                            <div class="row align-items-center mb-4">
+                                <div class="col-auto">
+                                    <label for="member_phone" class="form-label">手機</label>
+                                </div>
+                                <div class="col">
+                                    <input class="form-control" id="member_phone" v-model.trim="signup.phone"></input>
+                                    <span><!-- 錯誤提示位置 --></span>
+                                </div>
+                            </div>
+                            <div class="row align-items-center mb-4">
+                                <div class="col-auto">
+                                    <label for="member_birthday" class="form-label">生日</label>
+                                </div>
+                                <div class="col">
+                                    <!-- 生日限制 10歲以上 90歲以下-->
+                                    <input class="form-control" type="date" id="member_birthday" min="1930-01-01" max="2011-01-01" v-model.trim="signup.birthday"></input>
+                                    <span><!-- 錯誤提示位置 --></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="m-auto">
+                                <button type="button" onclick="clearFormContent()" class="btn btn-outline-secondary me-3" data-bs-dismiss="modal">取消</button>
+                                <button class="btn btn-outline-primary disabled" @click="memberSignUp()" type="button" id="btn_signup" data-bs-target="#signup_success" data-bs-toggle="modal" data-bs-dismiss="modal">註冊</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+        <!-- 註冊成功<彈跳視窗> -->
+        <div class="modal fade" id="signup_success" data-bs-backdrop="static" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title m-auto" id="exampleModalToggleLabel2">註冊帳號</h5>
+                </div>
+                <div class="modal-body d-flex flex-column justify-content-center align-items-center">
+                    <i class="fa fa-check-square-o fs-1 text-success" aria-hidden="true"></i>
+                    <h3>註冊成功</h3>
+                    <p class="me-3">已將驗證信送至Email</p>
+                    <div class="d-flex align-items-end">
+                        <!-- 綁定resendMail()方法 -->
+                        <button class="btn btn-outline-primary me-3" id="btResend" onclick="resendMail()">重新發一次驗證信</button>
+                        <!-- 動態新增秒數 -->
+                        <div class="text-muted" id="countSeconds"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-primary" data-bs-dismiss="modal">開始進入健身生活</button>
+                </div>
+              </div>
+            </div>
+        </div>
+    
+        <!-- quiz_info <彈跳視窗> -->
+        <div class="modal fade info_box" id="quiz_info" aria-hidden="true" data-bs-backdrop="static" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header info_title">
+                    <h5 class="modal-title m-auto" id="exampleModalToggleLabel2">準備挑戰健身知識</h5>
+                </div>
+                <div class="modal-body info_list ms-4">
+                    <div class="mb-2">1.每一題需十五秒內完成</div>
+                    <div class="mb-2">2.請輕鬆作答增加健身小常識</div>
+                    <div class="mb-2">3.總共有五道題目</div>
+                    <div class="mb-2">4.全部答對後將會獲得折價卷</div>
+                </div>
+                <div class="modal-footer buttons d-flex justify-content-center">
+                    <button class="btn btn-outline-primary quit show me-3" data-bs-dismiss="modal">還沒準備</button>
+                    <button class="btn btn-primary restart show" data-bs-target="#quiz_box" data-bs-toggle="modal" data-bs-dismiss="modal">可以開始</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    
+        <!-- quiz_box <彈跳視窗> -->
+        <div class="modal fade" id="quiz_box" aria-hidden="true" data-bs-backdrop="static" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title col-8" id="exampleModalToggleLabel2">健身知識挑戰開始</h5>
+                <div class="timer d-flex bg-primary p-2 rounded-3 col-4 justify-content-center">
+                    <div class="time_left_txt me-2 text-white">剩餘時間</div>
+                    <div class="timer_sec badge bg-light text-dark d-flex align-items-center justify-content-center">03</div>
+                </div>
+                </div>
+                <div class="modal-body">
+                    <div class="que_text">
+                    <!-- Here I've inserted question from JavaScript -->
+                    </div>
+                    <div class="option_list p-3 d-block">
+                    
+                    <!-- Here I've inserted options from JavaScript -->
+                    </div>
+                </div>
+                <div class="modal-footer result_footer  d-flex justify-content-between">
+                    <div class="total_que">
+                    <!-- Here I've inserted Question Count Number from JavaScript -->
+                    </div>
+                    <button class="next_btn btn btn-outline-primary show d-none">下一題</button>
+                    <button class="btn btn-primary result_btn " data-bs-target="#result_box" data-bs-toggle="modal" data-bs-dismiss="modal">查看結果</button>
+                </div>
+            </div>
+            </div>
+        </div>
+      
+        <!-- result_box -->
+        <div class="modal fade result_b" id="result_box" aria-hidden="true" data-bs-backdrop="static" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalToggleLabel2">健身知識結果</h5>
+                </div>
+                <div class="modal-body  d-flex flex-column align-items-center">
+                <div class="complete_text mb-3">恭喜你完成了健身知識測驗</div>
+                <div class="score_text">
+                    <!-- 插入評分 -->
+                </div>
+                </div>
+                <div class="modal-footer buttons">
+                <button class="btn btn-primary  show" data-bs-dismiss="modal" data-bs-target="#quiz_info" data-bs-toggle="modal" onclick="reset_result_btn()">再次挑戰</button>
+                <button class="btn btn-primary  show" data-bs-dismiss="modal" onclick="reset_result_btn()">休息一下</button>
+                </div>
+            </div>
+            </div>
+        </div>
+       
+    </div>
+    
+
+
+    <!-- 簡介 OK-->
+    <header class="hg_title mb-6">
+        <div class="container-fluid align-items-center d-flex justify-content-center">
+            <div class="text-center p-5">
+                <h1>厝動HomeGym</h1>
+                <h3>在厝運動，輕鬆又健康</h3>
+            </div>
+        </div>
+    </header>
+
+    <!-- 廣告版 OK-->
+    <section class="course_banner pb-5 pt-6 overflow-hidden bg-white">
+        <div class="container-fluid">
+            <div class="swiper-container position-relative swiper_course_banner">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img class="w-100" src="https://fakeimg.pl/1280x720/" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="w-100" src="https://fakeimg.pl/1280x720/" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="w-100" src="https://fakeimg.pl/1280x720/" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="w-100" src="https://fakeimg.pl/1280x720/" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="w-100" src="https://fakeimg.pl/1280x720/" alt="">
+                    </div>
+                </div>
+                <div class="swiper-pagination bottom-0"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 教練精選/課程版 OK-->
+    <section class="course_coaching overflow-hidden">
+        <div class="container-fluid">
+            <div class="swiper-container swiper_course_coaching">
+                <div class="swiper-wrapper">
+                    <!-- 輪播項目 -->
+                    <div class="swiper-slide">
+                        <div class="card d-flex flex-row w-75 m-auto border-0 align-items-end">
+                            <img src="https://fakeimg.pl/1280x720/" class="img-fluid position-relative" alt="...">
+                            <div class="card-body p-4 position-absolute border-2 border w-100">
+                                <h3 class="mb-3">1教練名稱</h3>
+                                <h5 class="mb-3">經驗：瑜伽團教練長</h5>
+                                <p class="card-text w-50">自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card d-flex flex-row w-75 m-auto border-0 align-items-end">
+                            <img src="https://fakeimg.pl/1280x720/" class="img-fluid position-relative" alt="...">
+                            <div class="card-body p-4 position-absolute border-2 border w-100">
+                                <h3 class="mb-3">2教練名稱</h3>
+                                <h5 class="mb-3">經驗：瑜伽團教練長</h5>
+                                <p class="card-text w-50">自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card d-flex flex-row w-75 m-auto border-0 align-items-end">
+                            <img src="https://fakeimg.pl/1280x720/" class="img-fluid position-relative" alt="...">
+                            <div class="card-body p-4 position-absolute border-2 border w-100">
+                                <h3 class="mb-3">3教練名稱</h3>
+                                <h5 class="mb-3">經驗：瑜伽團教練長</h5>
+                                <p class="card-text w-50">自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 課程介紹 OK-->
+    <section class="course_recommendation_space pb-5 pt-6">
+        <div class="container-fluid">
+            <div class="swiper">
+                <div class="swiper-container swiper_course_group">
+                    <div class="swiper-wrapper">
+                        <!-- 輪播組 -->
+                        <div class="card_group d-flex swiper-slide justify-content-center">
+                            <div class="card w-25 h-100 me-3">
+                                <img src="https://fakeimg.pl/400x300/" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-end">
+                                        <h4 class="card-title">1課程名稱</h4>
+                                        <h6 class="pe-3">教練名稱</h6>
+                                    </div>
+                                    <div class="d-flex">
+                                        <p class="me-3 badge bg-secondary bg-dark">上半身</p>
+                                        <p class="me-3 badge bg-secondary bg-dark">腿部</p>
+                                    </div>
+                                    <p class="card-text">課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介</p>
+                                    <a href="/notPurchasedCourse" class="btn btn-primary">詳細課程內容</a>
+                                </div>
+                            </div>
+                            <div class="card w-25 h-100 me-3">
+                                <img src="https://fakeimg.pl/400x300/" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-end">
+                                        <h4 class="card-title">1課程名稱</h4>
+                                        <h6 class="pe-3">教練名稱</h6>
+                                    </div>
+                                    <div class="d-flex">
+                                        <p class="me-3 badge bg-secondary bg-dark">上半身</p>
+                                        <p class="me-3 badge bg-secondary bg-dark">腿部</p>
+                                    </div>
+                                    <p class="card-text">課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介</p>
+                                    <a href="#" class="btn btn-primary">詳細課程內容</a>
+                                </div>
+                            </div>
+                            <div class="card w-25 h-100 me-3">
+                                <img src="https://fakeimg.pl/400x300/" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-end">
+                                        <h4 class="card-title">1課程名稱</h4>
+                                        <h6 class="pe-3">教練名稱</h6>
+                                    </div>
+                                    <div class="d-flex">
+                                        <p class="me-3 badge bg-secondary bg-dark">上半身</p>
+                                        <p class="me-3 badge bg-secondary bg-dark">腿部</p>
+                                    </div>
+                                    <p class="card-text">課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介</p>
+                                    <a href="#" class="btn btn-primary">詳細課程內容</a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="card_group d-flex swiper-slide justify-content-center">
+                            <div class="card w-25 h-100 me-3">
+                                <img src="https://fakeimg.pl/400x300/" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-end">
+                                        <h4 class="card-title">2課程名稱</h4>
+                                        <h6 class="pe-3">教練名稱</h6>
+                                    </div>
+                                    <div class="d-flex">
+                                        <p class="me-3 badge bg-secondary bg-dark">上半身</p>
+                                        <p class="me-3 badge bg-secondary bg-dark">腿部</p>
+                                    </div>
+                                    <p class="card-text">課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介</p>
+                                    <a href="#" class="btn btn-primary">詳細課程內容</a>
+                                </div>
+                            </div>
+                            <div class="card w-25 h-100 me-3">
+                                <img src="https://fakeimg.pl/400x300/" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-end">
+                                        <h4 class="card-title">2課程名稱</h4>
+                                        <h6 class="pe-3">教練名稱</h6>
+                                    </div>
+                                    <div class="d-flex">
+                                        <p class="me-3 badge bg-secondary bg-dark">上半身</p>
+                                        <p class="me-3 badge bg-secondary bg-dark">腿部</p>
+                                    </div>
+                                    <p class="card-text">課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介</p>
+                                    <a href="#" class="btn btn-primary">詳細課程內容</a>
+                                </div>
+                            </div>
+                            <div class="card w-25 h-100 me-3">
+                                <img src="https://fakeimg.pl/400x300/" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-end">
+                                        <h4 class="card-title">2課程名稱</h4>
+                                        <h6 class="pe-3">教練名稱</h6>
+                                    </div>
+                                    <div class="d-flex">
+                                        <p class="me-3 badge bg-secondary bg-dark">上半身</p>
+                                        <p class="me-3 badge bg-secondary bg-dark">腿部</p>
+                                    </div>
+                                    <p class="card-text">課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介</p>
+                                    <a href="#" class="btn btn-primary">詳細課程內容</a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="card_group d-flex swiper-slide justify-content-center">
+                            <div class="card w-25 h-100 me-3">
+                                <img src="https://fakeimg.pl/400x300/" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-end">
+                                        <h4 class="card-title">3課程名稱</h4>
+                                        <h6 class="pe-3">教練名稱</h6>
+                                    </div>
+                                    <div class="d-flex">
+                                        <p class="me-3 badge bg-secondary bg-dark">上半身</p>
+                                        <p class="me-3 badge bg-secondary bg-dark">腿部</p>
+                                    </div>
+                                    <p class="card-text">課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介</p>
+                                    <a href="#" class="btn btn-primary">詳細課程內容</a>
+                                </div>
+                            </div>
+                            <div class="card w-25 h-100 me-3">
+                                <img src="https://fakeimg.pl/400x300/" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-end">
+                                        <h4 class="card-title">3課程名稱</h4>
+                                        <h6 class="pe-3">教練名稱</h6>
+                                    </div>
+                                    <div class="d-flex">
+                                        <p class="me-3 badge bg-secondary bg-dark">上半身</p>
+                                        <p class="me-3 badge bg-secondary bg-dark">腿部</p>
+                                    </div>
+                                    <p class="card-text">課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介</p>
+                                    <a href="#" class="btn btn-primary">詳細課程內容</a>
+                                </div>
+                            </div>
+                            <div class="card w-25 h-100 me-3">
+                                <img src="https://fakeimg.pl/400x300/" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-end">
+                                        <h4 class="card-title">3課程名稱</h4>
+                                        <h6 class="pe-3">教練名稱</h6>
+                                    </div>
+                                    <div class="d-flex">
+                                        <p class="me-3 badge bg-secondary bg-dark">上半身</p>
+                                        <p class="me-3 badge bg-secondary bg-dark">腿部</p>
+                                    </div>
+                                    <p class="card-text">課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介課程簡介</p>
+                                    <a href="#" class="btn btn-primary">詳細課程內容</a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next me-5 text-primary" id="course_recommendation_space_next"></div>
+                <div class="swiper-button-prev ms-5 text-primary" id="course_recommendation_space_prev"></div>
+            </div>
+        </div>
+    </section>
+        
+    <!-- 常見問題 OK -->
+    <section class="fqa_space pb-5 pt-6">
+        <div class="container">
+            <div class="row">
+                <h3>常見問題</h3>
+                <div class="col-lg-8 col-md-12">
+
+                    <div class="accordion" id="accordionExample">
+                        <!-- 問題項目 -->
+                        <div class="accordion-item border-1 border border-primary rounded-2 mb-2">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                問題1
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-1 border border-primary rounded-2 mb-2">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                問題2
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                <p>解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-1 border border-primary rounded-2 mb-2">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            問題3
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                            <p>解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答</p>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="accordion-item border-1 border border-primary rounded-2 mb-2">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            問題4
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                            <p>解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答</p>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="accordion-item border-1 border border-primary rounded-2 mb-2">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            問題5
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                            <p>解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答解答</p>
+                            </div>
+                        </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class=" col-lg-4 d-flex align-items-center">
+                    <img class="w-100" src="https://fakeimg.pl/400x500/" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 傳送訊息 OK-->
+    <section class="messenger_form pb-5 bg-primary pt-6" style="position: relative;">
+        <div class="container col-lg-6 col-sm-12">
+            <h3 class="text-white text-center">傳送訊息</h3>
+            <form>
+                <div class="mb-3">
+                    <label for="messenger_name" class="form-label text-white">姓名</label>
+                    <input class="form-control" id="messenger_name" type="text" placeholder="請輸入姓名" aria-label="default input example">
+                </div>
+                <div class="mb-3">
+                    <label for="messenger_email" class="form-label text-white">E-mail</label>
+                    <input type="email" class="form-control" id="messenger_email" placeholder="請輸入E-mail">
+                </div>
+                <div class="mb-3">
+                    <label for="messenger_textarea1" class="form-label text-white">傳送內容</label>
+                    <textarea class="form-control" id="messenger_textarea1" rows="5"></textarea>
+                </div>
+                <div class="text-center">
+                    <div class="btn btn-outline-light mt-3 commentBtn" onclick="subimtShow()">送出</div>
+                    <div class="alert hide">
+                        <span class="msg">訊息已送出!</span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- footer OK-->
+    <footer class="responsive_footer bg-light">
+        <div class="content container-xl p-4">
+            <div class="row justify-content-between">
+                <div class="col-md-3 ">
+                    <h5>關於我們</h5>
+                    <p class="about text-primary text_ls">關於我關於我關於我關於我關於我關於我關於我關於我關於我關於我關於我關於我關於我關於我關於我關於我關於我關於我關於我關於我關於我關於我關於我關於我關於我關於我關於我關於我</p>
+                </div>
+                <div class="col-md-2 ">
+                    <h3>關於</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a class="text_ls" href="" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal">使用者條款</a></li>
+                        <li class="mb-2"><a class="text_ls" href="" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal2">服務契約</a></li>
+                        <li class="mb-2"><a class="text_ls" href="" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal3">隱私權政策</a></li>
+                        <li class="mb-2"><a class="text_ls" href="/team">團隊介紹</a></li>
+                    </ul>
+                    <!-- 使用者條款 -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="modal-title" id="exampleModalLabel">厝動HomeGym使用者條款</h3>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body lh-lg fs-4">
+                                    <p>本使用者條款（以下稱「本條款」）適用於所有位於及連結於厝動HomeGymin網域之網站（以下稱「厝動HomeGym「我們」「我們的」），厝動HomeGym為厝動股份有限公司、子公司及其關係企業之財產（以下稱「厝動HomeGym集團」）。
+                                    </p>
+                                    <br>
+                                    <h3>同意條款</h3>
+                                    <hr>
+                                    <p>不論個別的使用者其物理位置於何處，本條款適用於所有連結至厝動HomeGym之會員或訪客（以下合稱「使用者」、「您」），透過持續使用厝動HomeGym提供之服務，即表示您已知悉且同意本條款，若您不同意本條款之部分或全部內容，您應立即停止使用
+                                        厝動HomeGym另關於課程購買、購課後服務等，請參閱：厝動HomeGym網際網路課程購買暨服務契約（以下簡稱購課合約），且於您使用厝動HomeGym前，亦請詳閱我們的隱私權政策。若您有任何疑問，歡迎隨時直接聯繫我們的客服人員。關於募課提案者的權利及義務，我們將另以募資開課合約約定。使用者未滿七歲，不得於厝動HomeGym「建立帳號」（如涉及購買課程等事項，請參考購課合約之約定），須由其法定代理人建立帳號。如使用者已滿七歲未滿二十歲，則其申請註冊成為會員前，需得其法定代理人同意，始得註冊及使用厝動HomeGym所提供的會員服務。使用者未滿二十歲，須保證其獲得法定代理人同意可使用厝動HomeGym提供的服務。當該使用者申請註冊成為會員，並繼續使用厝動HomeGym提供的服務時，則表示其法定代理人已經閱讀且知悉並同意本條款。
+                                    </p>
+                                    <br>
+                                    <h3>本條款更新</h3>
+                                    <hr>
+                                    <p>厝動HomeGym集團在法律准許的範圍內，有權隨時修改、調整本條款中的任何條款內容。一旦厝動HomeGym集團對本條款內容進行修改或調整，厝動HomeGym將會以公告形式發佈通知。任何修改或調整將於公布之時起生效。如果使用者在修改公布後，繼續使用厝動HomeGym所提供的服務，則表示同意遵守本條款之更動。因此，請使用者務必定期查閱本條款，以確保了解本條款的所有更動。如果使用者不同意厝動HomeGym對本條款之更動，請離開厝動HomeGym網站並立即停止使用厝動HomeGym服務，同時，會員應刪除個人檔案並註銷會員資格。厝動HomeGym集團亦有權於下列違規情事發生時，刪除會員個人檔案並註銷會員資格。
+                                    </p>
+                                    <br>
+                                    <h3>會員帳號及密碼安全</h3>
+                                    <hr>
+                                    <p>無論使用者是訪客或會員，都可以瀏覽厝動HomeGym上的內容，但只有註冊成為會員之使用者始得購買線上課程並享受厝動HomeGym提供的各項服務。訪客可以很容易在
+                                        厝動HomeGym上建立帳號，只要輸入 Email 或使用其個人已註冊之 Google 或 Facebook
+                                        帳號登入即可。使用者不應使用任何與其個人真實資料無關之資訊建立其帳號名稱，包括但不限於使用模仿他人姓名或使用攻擊性的字眼、任何種族歧視的文字及任何會傷害、侵害他人權利之文字作為帳號名稱，如發生前開事項，厝動HomeGym有權終止該帳號的服務。在僅建立帳號但尚未購買課程前（購買產品後，即依照購課合約之約定），應注意如下事項：會員應妥善保管其帳號及密碼，不應將其帳號及密碼轉讓或出借給他人使用，如會員發現其帳號遭他人非法使用，應立即通知
+                                        厝動HomeGym因駭客行為或會員的保管疏忽導致帳號、密碼遭他人非法使用，厝動HomeGym不負擔任何責任。您有義務妥善保管帳戶、密碼及其他相關身分驗證資訊，並為此帳號登入系統後所進行之一切活動、行為負責，包括但不限於衍生之相關費用。您同意在使用厝動HomeGym時遵循所有適用法律，且僅可基於合法目的使用本服務。以非經厝動HomeGym同意或指示之方式使用本服務或接觸系統，均應被嚴格禁止，厝動HomeGym有權停止提供該使用者之服務。
+                                    </p>
+                                    <br>
+                                    <h3>隱私權政策</h3>
+                                    <hr>
+                                    <p>
+                                        使用者提供的個人資料及厝動HomeGym集團保存與使用者相關之若干其它資料將受到中華民國法律和厝動HomeGym隱私權政策之規範。</p>
+                                    <br>
+                                    <h3>使用規定和條約</h3>
+                                    <hr>
+                                    <p>
+                                        任何經由厝動HomeGym服務上傳、張貼、發送電子郵件或任何其它方式傳送的文字、文件、影片、照片（包括使用者的照片）、圖片、聲音、音樂作品、創作作品或任何其他內容（以下簡稱「內容」），無論為公開或是私下傳送，均由內容提供者承擔責任。厝動HomeGym針對任何會員上傳未經授權之內容，部負擔任何責任。使用者均不得下載、重製、公開傳輸、轉售、公開播放、分享或使用厝動HomeGym及厝動HomeGym上之課程。使用者違反前述規定，將負擔所有因此侵權行為而生之法律責任。
+                                    </p>
+                                    <br>
+                                    <h3>預購及課堂參與</h3>
+                                    <hr>
+                                    <p>
+                                        厝動HomeGym是一個群眾募課的預購平台。厝動HomeGym允許部份會員提出課程並尋求其他會員的預購（預購者）。提出課程的這些會員即課程老師，而預購者或是購買課程之會員即為學生。
+                                    </p>
+                                    <br>
+                                    <h3>發票開立</h3>
+                                    <hr>
+                                    <p>
+                                        厝動HomeGym將於學生購買課程（不論預購或正式開課）後，開立並寄送發票予學生。若課程募資失敗或課程老師未完備其與厝動HomeGym約定之義務，厝動HomeGym會將學生已支付之費用全額退還，以保障其權利。惟學生若於台灣以外地區購買課程，依中華民國稅法得免開發票。
+                                    </p>
+                                    <br>
+                                    <h3>第三方連結</h3>
+                                    <hr>
+                                    <p>
+                                        厝動HomeGym可能含有連結至厝動HomeGym以外之第三方網站，由於厝動HomeGym無法控制這些網站及資源，因此使用者在使用各該第三方網站前，需自行瞭解各該第三方網站之使用者條款及隱私權政策。
+                                    </p>
+                                    <br>
+                                    <h3>智慧財產權</h3>
+                                    <hr>
+                                    <p>
+                                        厝動HomeGym擁有厝動HomeGym及於厝動HomeGym上發表之所有內容（“網站內容”）之所有權利，所有權及一切因此所生之利益，包括所有著作權、專利、商業秘密，商標和其他智慧財產權。所有未被明確授權之權利將僅能由厝動HomeGym行使。網站內容的所有材料和組合，包括但不限於檔案、課程、各式圖片、報告、課程介紹、講師介紹和常見問答均以厝動HomeGym為著作人。您對網站內容的所有材料和組合的使用均受本條款之約束。厝動HomeGym的設計或排版受著作權，外觀設計，商標，公平法和其他法律的保護，不得進行部分或全部之重製或模仿。未經厝動HomeGymGroup
+                                        明確授權，不得重製或轉發 厝動HomeGym的商標，設計、聲音或圖像。</p>
+                                    <br>
+                                    <h3>內容和其他合法權益</h3>
+                                    <hr>
+                                    <p>
+                                        厝動HomeGym集團並非所有上傳至厝動HomeGym內容之所有者。然而當會員發表、上傳、提交內容至厝動HomeGym的留言或對話板，該會員即同意授與
+                                        厝動HomeGym集團全球的、不可撤銷的、非獨家的、免費的授權可以重製、使用、發表、翻譯、公開展示、公開傳輸、公開傳播、改作前述內容至所有現在或未來的媒體平台。該會員同意前述使用將無須支付任何費用。
+                                    </p>
+                                    <br>
+                                    <h3>終止服務</h3>
+                                    <hr>
+                                    <p>
+                                        使用者同意厝動HomeGym集團有權可基於其判斷或任何原因，隨時以各樣理由終止或暫停會員使用厝動HomeGym之服務，包括但不限於該會員顯少使用服務、違反本條款等。而對已購課會員課程相關服務事項的終止，則另依購課合約之約定。厝動HomeGym集團於終止服務後，不論是否已通知，均得刪除該會員之帳號及內容，並可避免該使用者於未來連結至厝動HomeGym或使用厝動HomeGym
+                                    </p>
+                                    <br>
+                                    <h3>賠償</h3>
+                                    <hr>
+                                    <p>
+                                        使用者擔保如厝動HomeGym集團及其管理階層、董事、員工、代理人及承包商因 a) 該使用者所發布或遞交之內容 b) 使用厝動HomeGym c)
+                                        該使用者違反本條款及 d)
+                                        使用者侵犯第三人之任何權利，而產生之各樣主張、要求，從而受有損失、須負擔責任、損害賠償或支出（包括但不限於合理的律師費用），使用者同意賠償。</p>
+                                    <br>
+                                    <h3>資料備份</h3>
+                                    <hr>
+                                    <p>
+                                        使用者同意隨時為資料備份，以防資料遺失，厝動HomeGym不對任何內容遺失及使用者因此而受的相關損失承擔責任。</p>
+                                    <br>
+                                    <h3>與廣告商進行之交易</h3>
+                                    <hr>
+                                    <p>
+                                        使用者明白於厝動HomeGym所投放之廣告內容、行銷文字及商品說明等各種銷售資訊，均由各該廣告商、產品與服務供應商所刊登，厝動HomeGym接受委託予以刊登，對內容並不做實質之審查或修改，請使用者自行謹慎斟酌判斷此等廣告之正確性與可信度。除有關法律法規有明文規定要求厝動HomeGym承擔責任以外，使用者因前述廣告而產生之交易遭受的任何的損失或損害，厝動HomeGym均不予負責。
+                                    </p>
+                                    <br>
+                                    <h3>禁止商業行為</h3>
+                                    <hr>
+                                    <p>
+                                        使用者同意於使用厝動HomeGym時將不會：a) 修改、重製、對於任何功能、程式進行還原工程 （reverse
+                                        engineering）、反向組譯（disassemble）或任何企圖取得原始碼或內容之行為；b)
+                                        於上架之課程內容，包含任何商業或置入性行銷之內容，厝動HomeGym有權自行認定並將違反規定之內容無條件下架或移除。</p>
+                                    <br>
+                                    <h3>擔保與保證</h3>
+                                    <hr>
+                                    <p>
+                                        厝動HomeGym不保證以下事項：a) 本服務將符合使用者的特定要求；b) 於厝動HomeGym購買或取得之任何產品、服務、資訊或其它課程將符合使用者的期望。
+                                    </p>
+                                    <br>
+                                    <h3> 一般性條款</h3>
+                                    <hr>
+                                    <p>
+                                        本條款及使用者與厝動HomeGym之關係，均以中華民國法律為準據法。使用者與厝動HomeGym就本服務、本條款或其它有關事項發生的爭議，應以台灣台北地方法院為第一審管轄法院。倘本條款之部分規定因與中華民國法律抵觸而無效者，本條款其它規定仍應具有完整的效力及效果。本條款之標題僅供方便而設，不具任何法律或契約效果。
+                                    </p>
+                                    <br>
+                                    <h3>檢舉</h3>
+                                    <hr>
+                                    <p>
+                                        倘發現任何違反本條款之情事，請以Email寄至homeGym@gmail.com通知厝動HomeGym團隊</p>
+                                    <br>
+                                    <h3>聯絡我們</h3>
+                                    <hr>
+                                    <p>如果對本服務條款或我們的信息處理方法有任何疑問，請通過電子郵件的方式聯繫：homeGym@gmail.com。
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 服務契約 -->
+                    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="modal-title" id="exampleModalLabel">厝動HomeGym網際網路課程購買暨服務契約</h3>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body lh-lg fs-4">
+                                    <p>本網際網路課程購買暨服務契約（以下簡稱本契約），指厝動股份有限公司（以下簡稱「厝動HomeGym」、「我們」、「我們的」，公司基本資料詳列如下）授權您於
+                                        厝動HomeGym.in網域之網站或厝動HomeGym所有之移動裝置平台（厝動HomeGym
+                                        App）（以下合稱本平台），使用厝動HomeGym透過網際網路連線、或移動裝置平台離線進行之教學、評量或其他相關服務(以下簡稱「本服務」)。爰此，關於本服務之權利義務，雙方同意以本契約約定之。
+                                    </p>
+                                    <br>
+                                    <h3>契約審閱期間及當事人基本資料</h3>
+                                    <hr>
+                                    <ol class="left2">
+                                        <li>您已審閱本契約全部條款內容超過 3 日以上。</li>
+                                        <li>您即於本平台經下列程序與厝動HomeGym成功締約者（以下簡稱會員），個人資料及已購課程清單詳細皆載明於您的會員頁面。</li>
+                                        <li>厝動股份有限公司（厝動HomeGym）</li>
+                                        聯絡電話：0911-222-333<br>
+                                        客戶服務電子郵件：homeGym@gmail.com<br>
+                                        營業所地址：台北市大安區忠孝東路三段1號<br>
+                                        統一編號：3345678<br>
+                                        <br>
+
+                                        <h3 class="left1">本服務內容 包括下列各款：</h3>
+                                        <hr class="left1">
+                                        <li>厝動HomeGym提供本服務之網站：厝動HomeGym.in及厝動HomeGym所有之厝動HomeGym App</li>
+                                        <li>厝動HomeGym提供本服務之適用對象：不限</li>
+                                        <li>厝動HomeGym提供本服務之教學內容：依會員購買課程內容而定，涵括設計、行銷、語言教學及投資等。</li>
+                                        <li>厝動HomeGym提供本服務之教學課程數量及贈送之教學課程數量，依您的會員頁面已購課程清單所載。</li>
+                                        <br>
+
+                                        <h3 class="left1">作業系統設備規格</h3>
+                                        <hr class="left1">
+                                        <li>為締造您使用本服務之良好體驗，您的電腦或手機應具備課程頁面建議及下表所列之軟硬體設備基本規格及要求，若您的設備暫無法滿足前述基本規格及要求，您明白可能會造成無法使用本服務或影響本服務之品質：
+                                        </li>
+                                        <div>◼電腦<br>
+                                            Mac OS 10.13<br>
+                                            Windows 10</div>
+                                        <div>◼手機<br>
+                                            iOS 12<br>
+                                            Android 7</div>
+                                        <div>◼瀏覽器<br>
+                                            Chrome 75<br>
+                                            Firefox 68</div>
+                                        <div>◼網路速度<br>
+                                            光纖網路 2M<br>
+                                            行動網路 4G</div>
+                                        <li>您連結厝動HomeGym指定網站系統之機房設備之接取網路，除經雙方約定由厝動HomeGym所提供者外，應由您自行向合法經營之電信事業申請租用，您租用該接取網路所生之權利義務，依您與該電信事業間契約約定之。</li>
+                                        <li>若我們未事先告知如第 3.1 條之約定，致您無法使用本服務或影響本服務之品質者，您得主張本契約不生效力。</li>
+                                        契約之成立生效
+                                        <li>您經由網際網路購買本服務者，於厝動HomeGym所指定之網頁上點選「同意」鍵，表示同意購買本服務並同意以電子文件作為表示方式後，厝動HomeGym將立即以本平台的再確認機制供您確認電子文件內容，經您再次確認後，本契約成立、生效。
+                                        </li>
+                                        <li>除前項情形外，經雙方於本契約書上簽名或蓋章後，本契約成立。</li>
+                                        法定代理人
+                                        <li>您若為限制行為能力人者，本契約之訂定，應經您的法定代理人同意，本契約始生效力；您若為無行為能力人者，本契約應由您的法定代理人代理訂定。</li>
+                                        <li>違反前項之約定者，除有民法第八十三條之情形者外，本契約不生效力，厝動HomeGym不得據以要求您的法定代理人負擔契約履行或賠償責任。</li>
+                                        <li>限制行為能力人於訂立本契約條款前，應主動告知其為限制行為能力人</li>
+                                        <br>
+
+                                        <h3 class="left1">課程提供與服務期間</h3>
+                                        <hr class="left1">
+                                        <li>厝動HomeGym授權您使用本服務之期間、次數或權利依下列之約定：</li>
+                                        □定期制：
+                                        <br>
+                                        您於收受厝動HomeGym提供使用本服務所需之登錄帳號、序號或密碼之次日起，為期__________之使用期間。
+                                        您於上述期間內得不計次數、每次不計時間使用本服務。
+                                        <br>
+                                        □計次制：
+                                        <br>
+                                        您得使用本服務共計_________（使用次數）次。
+                                        <br>
+                                        □計時制：
+                                        <br>
+                                        您得使用本服務共計__________（時間單位）。
+                                        <br>
+                                        ◼其他。當課程（或所購買包括但不限於圖片、文字、影像、聲音等內容，以下簡稱「內容」）處於可供使用狀態，您藉由行動裝置開始下載該內容，或開始瀏覽課程影片、內容，即視為課程（內容）已交付。此外，當您於依本契約合法購買本課程（內容）後，於未違反本契約或相關法規規定之前提下，厝動HomeGym
+                                        將持續提供本平台之服務。<br>
+                                        <br>
+                                        <h3 class="left1">擔保授權</h3>
+                                        <hr class="left1">
+                                        <li>厝動HomeGym應確保其就本契約所授權您使用之服務內容，為合法權利人。</li>
+                                        <li>厝動HomeGym有違反前項之情事致您無法繼續使用者，厝動HomeGym將賠償您無法使用之損失，賠償以替換類似課程或全額退還該課程您所支付之授權使用費金額為限。
+                                        </li>
+                                        <li>未經厝動HomeGym事前之書面同意，嚴格禁止您將使用本服務之權利讓與他人，包括但不限於與他人共用您的會員帳號、分享串流、公開放映或轉售課程兌換券、折價券等。
+                                        </li>
+                                        <br>
+
+                                        <h3 class="left1">授權使用費</h3>
+                                        <hr class="left1">
+                                        <li>本服務授權使用費之金額如已購內容清單所記載。
+                                        <li>厝動HomeGym得以優惠價格提供您自由決定是否加價購買商品、教學課程或服務。</li>
+                                        <li>您依前項優惠方式加價購買之教學課程或服務，契約終止時準用第 16 條第 2 項之規定。</li>
+                                        <li>訂立本契約時，厝動HomeGym以「贈品」為名義，向您所為之贈與，於本契約終止或解除時，
+                                            厝動HomeGym不會向您請求返還該贈品，亦不會向您主張應自返還之費用金額當中，扣除該贈品之價額。厝動HomeGym以贈送教學課程數量、使用期限為內容而簽訂契約者，亦同。
+                                        </li>
+                                        <li>前項「贈品」，其價值之上限為教學課程或服務價值之二分之一。</li>
+                                        <br>
+
+                                        <h3 class="left1">付款方式</h3>
+                                        <hr class="left1">
+                                        <li>雙方同意本服務授權使用費之給付方式為一次全部繳納，</li>
+                                        <li>經厝動HomeGym合作之金流業者為分期付款繳納。若您付款方式是分期付款繳納，有逾期未繳納分期付款應繳納費用，且遲延給付之金額已達分期付款總金額五分之二者，厝動HomeGym得定十日以上之催告期間請求給付，您逾期仍未完全給付者，厝動HomeGym得終止本契約，終止提供本服務並向您請求清償積欠之費用及依週年利率百分之五計算之遲延利息，並請求給付分期付款總金額扣除已給付金額後餘額百分之二十之違約金。
+                                        </li>
+                                        <br>
+                                        <h3 class="left1">授權使用原則</h3>
+                                        <hr class="left1">
+                                        <li>您如有下列情形之一者，由您自負一切法律責任，厝動HomeGym並得於發現下列情事時通知您立即終止本契約，您不得拒絕：
+                                            <br>◼您蓄意散布干擾本平台系統正常運作之電腦程式，或對於本平台進行包括但不限於修改、重製、對於任何功能、程式進行還原工程 （reverse
+                                            engineering）、反向組譯（disassemble）或任何企圖取得原始碼或內容之行為等。<br>◼您在本平台上散布恐嚇、毀謗、侵害他人隱私、色情或其他違反強制或禁止規定、公序良俗之文字、圖片或影像。
+                                        </li>
+                                        <li>於前項情形及第 7.3條、第 11.7
+                                            條等情形者，厝動HomeGym有權自行認定並立即停止傳輸（下架）任何前述內容並採取相應行動，包括但不限於暫停您使用本服務之全部或部分、移除該內容或保存有關記錄等。
+                                        </li>
+                                        <li>您利用本平台從事其他不法或違反本契約約定事項之行為，其情節重大，且經厝動HomeGym通知您限期3日改正而屆期未改正或無法改正者，厝動HomeGym得通知您立即終止本契約，您不得拒絕。
+                                        </li>
+                                        <li>厝動HomeGym 依本條第 1 項及第 3 項之約定終止本契約者，準用第 16 條之規定。</li>
+                                        <br>
+
+                                        <h3 class="left1">您的義務</h3>
+                                        <hr class="left1">
+                                        <li>您對於使用本服務所產生之授權使用費，有給付之義務。</li>
+                                        <li>您對於您的會員帳號與個人密碼有妥善保管以避免第三人知悉之義務。</li>
+                                        <li>您在使用本服務時，有遵守本契約所約定之授權使用原則之義務。</li>
+                                        <li>您依本契約之約定所註冊之個人資料有錯誤或已變更者，應儘速通知厝動HomeGym請求更正。如因您怠於通知而致其權益受損者，應由您自行負責。</li>
+                                        <li>您應提供並持續保持所有建立該帳號之個人資料之真實性及完整性，所有的個人資料皆被視為註冊必備要素，如建立帳號時提供之個人資料有虛偽不實或不完整之情事，應視為違反本契約。
+                                        </li>
+                                        <li>您應為其使會員帳號登入系統後所進行之一切活動、行為負責，包括但不限於衍生之相關費用。</li>
+                                        <li>您不得重製、公開傳輸、轉售、公開播放、分享、以本平台以外之方式下載或使用本服務。</li>
+                                        <li>您於本同意書有效期間內或終止後，均不得有任何惡意損害厝動HomeGym商譽之行為。</li>
+                                        <br>
+
+                                        <h3 class="left1">帳號密碼非法使用之處理</h3>
+                                        <hr class="left1">
+                                        <li>使用您的會員帳號與個人密碼，登入本平台之行為，推定為您的行為。</li>
+                                        <li>若您發現您的會員帳號或個人密碼遭第三人不法或不當之使用者，應立即通知我們。經您確認有遭第三人不法或不當之使用情事者，我們將立即暫停該會員帳號或個人密碼之使用，並接受您更換會員帳號或個人密碼。
+                                        </li>
+                                        <br>
+
+                                        <h3 class="left1">服務品質</h3>
+                                        <hr class="left1">
+                                        <li>厝動HomeGym應提供具有可合理期待安全性之服務，並應確保其系統設備，無發生錯誤、畫面暫停、遲滯、中斷或不能進行連線之情形。</li>
+                                        <li>厝動HomeGym因可歸責於自己之事由，違反前項之約定者，應立即於 48 小時內更正或修復之。</li>
+                                        <li>您明白厝動HomeGym平台上之課程由各授課老師提供，厝動HomeGym盡力要求老師們所提供之教學內容或教材之正確性，經您通知知悉課程或教材內容可能有錯誤，我們將協助您與授課老師確認內容，並於通知或知悉之日起算
+                                            3 個工作日內完成與授課老師之初步確認。</li>
+                                        <li>您使用本服務時，發生情節重大之系統異常或教學內容、教材錯誤之情事達3次以上，經您立即通知厝動HomeGym且厝動HomeGym未依規定修復或更正，您得通知厝動HomeGym逕行終止本契約，厝動HomeGym不得拒絕，厝動HomeGym並應準用第16條返還您本服務授權使用費。
+                                        </li>
+                                        <li>您使用本服務時，因可歸責於厝動HomeGym所合作之第三人之事由，發生教學內容錯誤、網站系統畫面暫停、中斷、不能進行連線或其他服務品質瑕疵之情形，厝動HomeGym將立即更正或修復之。
+                                        </li>
+                                        <li>厝動HomeGym不保證以下事項：<br>
+                                            本服務將符合您的特定要求於厝動HomeGym購買或取得之任何產品、服務、資訊或其它課程將符合您的期望，對此是否使用本服務應由您自行考慮且自負風險。
+                                        </li>
+                                        <br>
+
+                                        <h3 class="left1">企業經營者之履約保證責任</h3>
+                                        <hr class="left1">
+                                        <li>如本服務授權使用費預付期間逾一年且預付金額超過新臺幣五萬元者，厝動HomeGym就超過金額部分，將依信託法規定開立信託專戶管理或由銀行提供履約保證，作為履約保證之內容。
+                                        </li>
+                                        <br>
+
+                                        <h3 class="left1">暫停服務之處理</h3>
+                                        <hr class="left1">
+                                        <li>厝動HomeGym對於本服務相關軟硬體設備，進行營運上必要之搬遷、更換、升級、保養或維修時，得暫停本服務之全部或一部。</li>
+                                        <li>厝動HomeGym因前項事由而暫停本服務之全部或一部，應於暫停本服務7日前，於本服務網站首頁上及本服務進行中公告，並以電子郵件通知您。但因臨時性、急迫性或不可歸責於厝動HomeGym之事由者，不在此限。
+                                        </li>
+                                        <br>
+
+                                        <h3 class="left1">契約之變更</h3>
+                                        <hr class="left1">
+                                        <li>厝動HomeGym修改本契約時，應於 30 日前於本平台公告之，同時以電子郵件通知您。</li>
+                                        <li>您未為反對之表示且繼續使用本服務者，厝動HomeGym依契約變更後之內容繼續提供本服務。</li>
+                                        <li>您不同意第1項之變更，得於公告後三十日內向厝動HomeGym主張終止契約。厝動HomeGym應準用第 16 條約定返還您本服務授權使用費金額。</li>
+                                        <br>
+
+                                        <h3 class="left1">終止契約與退費</h3>
+                                        <hr class="left1">
+                                        <li>您於下列情形，且您或您購買課程時所指定之人，未觀看指定試看課程單元或特定預覽部份以外之課程內容者，得通知厝動HomeGym終止契約，除有正當理由外，
+                                            厝動HomeGym不得拒絕：</li>
+                                        <ul>
+                                            <li>開課日前終止合約，應全額退還該課程您所支付之授權使用費金額。</li>
+                                            <li>開課日後，合約生效日起 7 日內終止合約，應全額退還該課程您所支付之授權使用費金額。</li>
+                                            <li>開課日後，合約生效日起第 8 日至第 14 日以內始終止合約者，應返還該課程您所支付之授權使用費金額30％。</li>
+                                            <li>開課日後，合約生效日起第 15 日終止合約者，該課程您所支付之授權使用費金額不予退還。</li>
+                                        </ul>
+                                        <li>契約終止後，厝動HomeGym應依前項之方式，結算、撥付本服務之授權使用費。</li>
+                                        <li>若課程募資失敗或課程老師未完備其與厝動HomeGym約定之義務，厝動HomeGym將您已支付之費用全額退還，以保障您的權利。</li>
+                                        <li>若為一次性之圖片、文字類型數位內容，不適用本條第一項課程退費之約定。</li>
+                                        <br>
+
+                                        <h3 class="left1">申訴權利</h3>
+                                        <hr class="left1">
+                                        <li>您對於厝動HomeGym所提供之本服務，除得撥打厝動HomeGym電話提出申訴外，亦得以電子郵件或書面，或至 厝動HomeGym
+                                            之營業處所向厝動HomeGym 提出申訴，厝動HomeGym應自接獲您申訴之日起 15 日內妥適處理之。</li>
+                                        <br>
+
+                                        <h3 class="left1">損害賠償責任</h3>
+                                        <hr class="left1">
+                                        <li>您擔保如厝動HomeGym集團及其管理階層、董事、員工、代理人及承包商因 a) 該您所發布或遞交之內容 b) 您使用 本平台 c) 您違反本契約及 d)
+                                            您使用本平台時侵犯第三人之任何權利，而產生之各樣主張、要求，從而受有損失、須負擔責任、損害賠償或支出（包括但不限於合理的律師費用），您同意賠償。
+                                        </li>
+                                        <br>
+
+                                        <h3 class="left1">其他</h3>
+                                        <hr class="left1">
+                                        <li>厝動HomeGym將於您購買課程後，開立並寄送電子發票予您。</li>
+                                        <li>惟您若於台灣以外地區購買課程，依中華民國稅法厝動HomeGym得免開發票。</li>
+                                        <br>
+
+                                        <h3 class="left1">契約之附件</h3>
+                                        <hr class="left1">
+                                        <li>有關本契約之附件均為本契約之一部分。
+                                        <li>前項附件之內容，如有與本契約條款內容相牴觸者，應為有利於您之適用。</li>
+                                        <li>本契約成立時，厝動HomeGym會將本契約及相關附件，提供您下載、列印儲存。</li>
+                                        <br>
+
+                                        <h3 class="left1">管轄法院</h3>
+                                        <hr class="left1">
+                                        <li>因本契約所生之一切爭議，雙方當事人同意以臺灣臺北地方法院為第一審管轄法院，但不得排除消費者保護法第四十七條或民事訴訟法第四百三十六條之九有關小額訴訟管轄法院之適用。
+                                        </li>
+                                    </ol>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 隱私權政策 -->
+                <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title" id="exampleModalLabel">厝動HomeGym隱私權政策</h3>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body lh-lg fs-4">
+                                <p>厝動HomeGym網站厝動HomeGym.in（以下簡稱「厝動HomeGym」，「我們」，「我們的」），我們非常重視您的隱私權，此隱私權政策描述了我們如何蒐集您的個人資料，以及這些資料將如何被處理及利用，還有您可以如何管理及控制我們藉由 厝動HomeGym 所蒐集到您的相關資料。我們建議您在使用我們的網站、服務及與我們進行交易前，仔細閱讀此隱私權政策及我們的使用者條款。透過持續使用 厝動HomeGym，即表明您已接受此隱私權政策中描述的行為，並同意我們蒐集、處理及利用您的個人資料。關於募資開課者與厝動HomeGym之權利義務，另以雙方契約規範。</p>
+                                <br>
+                                <h3>資料蒐集之個人資料類別</h3>
+                                <hr>
+                                <ul>當您造訪或使用厝動HomeGym時，我們可能會蒐集您的個人資料包括但不限於以下：
+                                    <li>個人辨識（例如：姓名、住址、電子郵件信箱、行動電話、社群帳號）。</li>
+                                    <li>個人描述（例如：出生年月日、性別、出生地）。</li>
+                                    <li>財務辨識（例如：信用卡或簽帳卡之號碼、銀行帳戶之號碼與姓名）。</li>
+                                    <li>財務交易（例如：收付金額、支付方式、往來紀錄）。</li>
+                                    <li>安全細節（例如：密碼）。</li>
+                                    <li>電腦與行動應用裝置之資料，含軟硬體規格、裝置辨識資料、IP 位址、Cookie 與裝置地理位置。</li>
+                                    未分類之資料（例如：課程發問、備註、無法歸類之檔案、報告、留言、評論）
+                                </ul>
+                                <p>厝動HomeGym遵守 Facebook 與 Google 網站的隱私權政策及廣告宣傳規範，經您授權所蒐集的個人資料，將僅用於協助厝動HomeGym提供服務給您。厝動HomeGym在您使用 Facebook 或 Google 登錄時，僅蒐集並使用您的 E-mail 帳號與性別資訊，以提供客制化的內容及服務。
+                                    當您於厝動HomeGym購買任何課程時，所填寫之個人財務資料，包括信用卡資訊等，其蒐集、處理及利用將透過我們的金流協力廠商 （包括但不限於綠界科技 ECPay、LINE Pay 及 Razer 等），厝動HomeGym將不會蒐集及處理對應之個人財務資料。
+                                    厝動HomeGym如舉辦抽獎或任何回饋活動，您所提供給厝動HomeGym的聯繫資料，也僅供當次活動執行使用。</p>
+                                <br>
+                                <h3>Cookies</h3>
+                                <hr>
+                                <p>我們會在您的電腦上設定並存取 cookies，它們是一種小型的資訊檔，經由您的瀏覽器儲存於您的終端機記憶體或行動裝置中。cookie 的種類主要分為 session cookie、persistent cookie前者並未設置一定的保存期限，當您關閉瀏覽器時，session cookie 將自動刪除，後者則設置了一定的保存期限（例如一個月），除非期限屆滿或者您手動刪除，persistent cookie 將會一直保存在您的電腦或行動裝置中。</p>
+                                <ul>根據 cookie 的功能差異，有以下幾種類型：
+                                    <li>必要型 cookie: 此類 cookie 是維持厝動HomeGym網站運作所必須的，如果刪除將導致網站無法正常運行。</li>
+                                    <li>安全性 cookie: 此類 cookie 是用來驗證使用者、防止登入憑證遭到冒用等。</li>
+                                    <li>功能型 cookie: 此類 cookie 會記住您的瀏覽偏好，例如您的瀏覽紀錄、語言和地區、行動裝置的類型等等，以提供最符合您需求的瀏覽體驗。</li>
+                                    <li>分析型 cookie: 此類 cookie 讓 厝動HomeGym 收集您使用本網站的方式，例如您最常瀏覽哪些頁面，用以分析網站是否有需要改進的地方，以提供您更優質的體驗。</li>
+                                    <li>廣告型 cookie: 此類 cookie 用於精準行銷目的，例如依據您過去曾點閱過的內容，提供您可能感興趣的課程資訊。</li>
+                                </ul>
+                                <br>
+                                <h3>個人資料使用目的及利用方式</h3>
+                                <hr>
+                                <p>厝動HomeGym所蒐集之個人資料將用於提供服務、維持網站營運及提供技術支援和資安保護：
+                                    當您開始觀看線上課程時，基於課務管理需要，我們將於下列情形蒐集、處理並利用您的個人資料：包括但不限於繳交作業、記錄出席狀況及與講師互動等。
+                                    厝動HomeGym網站使用第三方服務 Hotjar 提供的分析工具，用以分析使用者瀏覽 厝動HomeGym網站的情況，Hotjar蒐集的範圍包含您於厝動HomeGym網站內滑鼠點擊、移動、捲動視窗、及部分鍵盤輸入之行為，所有被蒐集之資料僅用於協助 厝動HomeGym 優化網站功能，藉此提供您更好的使用體驗，不會蒐集任何密碼及涉及個人敏感資訊。
+                                    被蒐集的資料將由 Hotjar 處理及利用並保存於 Hotjar 的伺服器上。 Hotjar 將透過 Cookie 及其他技術蒐集的訊息包含：您瀏覽網站的設備之 IP 位置（僅以匿名格式處理及利用）、設備類型及瀏覽器、設備所在國家、網頁瀏覽使用的語言等。Hotjar 會使用其他第三方服務，如 Google Analytics 及 Optimizely等，來蒐集您的瀏覽資訊。如需了解 Google Analytics 及 Optimizely 如何蒐集和利用您的個人資料，請參閱其隱私權政策。如需更詳細的資訊，請參閱 Hotjar 的隱私權政策（https://www.hotjar.com/privacy）， 若您希望停止 Hotjar 的記錄功能，可至以下網址取消：https://www.hotjar.com/opt-out.</p>
+                                <br>
+                                <h3>個人資料分享政策</h3>
+                                <hr>
+                                <p>除本政策另有規定者、遵循法規之揭露或為了避免您或其他使用者受到任何威脅外，未經您的同意及授權，我們不會向第三人提供您的個人資料。於厝動HomeGym與第三方合作時，第三方之隱私權條款亦將適用。
+                                    若厝動HomeGym與其他公司合併、發生收購或我們出售部分或全部資產予第三方，我們會依交易條件約定移轉您的個人資料給該第三方。我們將會在移轉前您的個人資料前通知您，移轉後該第三方之隱私權政策將會適用於如何處理您的資料上。
+                                    為保障您的隱私及安全，我們將盡力以合理之技術及程序，保障所有個人資料之安全，但網路上的傳輸及資料之儲存，無法保證百分之百安全。</p>
+                                <br>
+                                <h3>分享之資訊</h3>
+                                <hr>
+                                <p>厝動HomeGym所蒐集之個人資料將於厝動HomeGym營運地點處理。網站部分功能可以讓您公開分享內容，當您使用這些功能時，您同意且明白您所張貼的內容將會被公眾所閱覽。當您開始觀看線上課程並繳交指定作業時，您同意這些內容將被公開，任何不特定第三人皆可閱覽。 隱私權政策更新
+                                    隱私權政策更新厝動HomeGym隱私權政策可能隨網站業務的需求隨時更改，除另有聲明者外，所有的修訂條款將於張貼日起自動生效，請您定期查看本政策。</p>
+                                <br>
+                                <h3>個人資料之權利</h3>
+                                <hr>
+                                <p>您可以隨時登入您位於厝動HomeGym之帳號修改或更正個人資料，或以Email寄至homeGym@gmail.com通知我們欲查詢或閱覽、要求製作複製本、請求補充、更正或停止蒐集、處理或利用及刪除您的帳戶及個人資料。惟於法律允許範圍內，我們仍得保留您部分個人資料，您提出前述請求時，您明白該請求將可能會導致 厝動HomeGym 無法提供部分或全部功能。
+                                    厝動HomeGym將於存續期間內或您要求我們刪除您的個人資料前，於厝動HomeGym提供服務之區域利用您的個人資料。</p>
+                                <br>
+                                <h3>第三方連結</h3>
+                                <hr>
+                                <p>厝動HomeGym可能會於服務內提供第三方外部連結，如果您點擊該連結進入第三方網站，則關於您的個人資料之蒐集、處理、利用都應受該網站之隱私權政策或相關協議規範，故建議您於使用該網站前，詳閱其隱私權政策，第三方網站如何蒐集及利用您的個人資料，概與 厝動HomeGym 無涉，厝動HomeGym 無需負責。</p>
+                                聯繫我們
+                                <br>
+                                <p>如果對本隱私權政策有任何疑問，歡迎隨時以電子郵件的聯繫：homeGym@gmail.com</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="connection col-md-3 ">
+                    <h5>聯絡方式</h5>
+                    <ul class="list-unstyled">
+                        <li class="d-flex">
+                            <span class="me-2"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                            </span>
+                            <p class="text-primary text_ls">台北市大安區忠孝東路三段1號</p>
+                        </li>
+                        <li class="d-flex">
+                            <span class="me-2"><i class="fa fa-phone" aria-hidden="true"></i>
+                            </span>
+                            <p><a href="tel:+886911222333">0911-222-333</a></p>
+                        </li>
+                        <li class="d-flex">
+                            <span class="me-2"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+                            </span>
+                            <p><a href="mailto:homeGym@gmail.com">homeGym@gmail.com</a></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="link_contact col-md-3 d-flex flex-column align-items-center h-100 pb-3">
+                    <ul class="list-unstyled">
+                        <li class="border border-2 mb-3 p-2 border-primary rounded-2 mb-2">
+                            <a class="d-flex" href="#"><i class="fa fa-youtube-play fs-2 me-2" aria-hidden="true"></i><p class="fs-5 mb-auto">Youtube</p></a>
+                        </li>
+                        <li class="border border-2 mb-3 p-2 border-primary rounded-2">
+                            <a class="d-flex" href="#"><i class="fa fa-facebook-official fs-2 me-2" aria-hidden="true"></i><p class="fs-5 mb-auto">Facebook</p></a>
+                        </li>
+                        <li class="border border-2 mb-3 p-2 border-primary rounded-2">
+                            <a class="d-flex" href="#"><i class="fa fa-instagram fs-2 me-2" aria-hidden="true"></i><p class="fs-5 mb-auto">Instagram</p></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bm-0 text-center bg-dark text-white p-3">
+            本網站｜建議使用瀏覽器版本：Google Chrome版本60以上 / Firefox版本48以上 / Safari 版本11以上
+        </div>
+        
+    </footer>
+
+    
+
+
+
+    
+
+</body>
+<!-- Bootstrap5 -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<!-- Swiper插件<幻燈片使用> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.0.6/swiper-bundle.min.js" integrity="sha512-r1+wZ6Dt2YNg8FujUHBbiXmDRNcVLTcN2q+lm0TSbmoBNUFJ4FdQ3zLeShz0bllBlzQ0QWtZuzJgdrW9xGc2Dw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./js/swiper_customized.js"></script>
+<!-- JS -->
+<script src="./js/index.js"></script>
+<!-- quiz -->
+<!-- <script src="./js/quiz_script.js"></script> -->
+<script src="./js/quiz_questions.js"></script>
+<!-- 導覽列顯示購物車商品 -->
+<script src="./js/shoppingNav.js"></script>
+<!-- Vue -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.8/vue.js' integrity='sha512-HkIQeXPu1b2dfKMXSER0khPNRQNY4rOVyUPDoSAIvX4Oalp9xsNZFz+GRLJSpyGYkjYlcTfEzN0YFvkZPD4n5g==' crossorigin='anonymous'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.1/axios.js' integrity='sha512-LogMNgGlX6xjUWK/hYLh0dPM0hxgmSx/FmoTsBAHVR/XZkMo3+5GLLIhWt4Tb352+vmoa2Boq0KiDq+bskFzXQ==' crossorigin='anonymous'></script>
+<script src="./Vue/navContent.js"></script>
+</html>

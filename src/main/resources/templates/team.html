@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/all.min.css">
+    <title>厝動HomeGym</title>
+    <style>
+        img {border:none}
+        .card{ vertical-align:middle; }
+        #pop{
+            writing-mode: vertical-lr;
+            padding: 140px;
+        }
+    </style>
+</head>
+<body>
+<!-- 導覽列 10/3更新-->
+<nav
+        class="main_nav navbar navbar-expand-md navbar-light pe-3 bg-primary fixed-top navbar_top border-bottom border-primary">
+    <div class="container-fluid">
+        <div class="navbar-brand d-flex align-items-center">
+            <img class="m-auto" style="height: 40px;" src="./imag/hg_logo/logo.svg" alt="">
+            <a class="text-white" href="/index">厝動 HomeGym</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="d-flex ms-auto position-relative col-4">
+                <input class="form-control" type="text" placeholder="關鍵字搜尋" aria-label="default input example">
+                <i class="fa fa-search position-absolute end-0 fs-4 p-1 pe-2" aria-hidden="true"></i>
+            </form>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
+                <div id="marker"></div>
+                <li class="nav-item">
+                    <a class="nav-link ms-3 text-white" aria-current="page" href="/shopping"><i
+                            class="fa fa-caret-square-o-right text-white" aria-hidden="true"></i>
+                        商城</a>
+                </li>
+                <li class="shoppping_car nav-item dropdown">
+                    <a class="nav-link ms-3 text-white" href="/shoppingCar"><i
+                            class="fa fa-shopping-cart text-white" aria-hidden="true"></i>
+                        購物車</a>
+                    <div class="dropdown-menu dropdown-menu-right" style="min-width:400px;min-height:100px;"
+                         id="dropdown-menu">
+                        <div class="px-3 py-2 " id="menu">
+                            <!-- 動態新增 -->
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="nav-link ms-3 dropdown dropdown-toggle text-white" id="mycourse_areas_dropdown"
+                           role="button" data-bs-toggle="dropdown" aria-expanded="false"><i
+                                class="fa fa-window-maximize text-white" aria-hidden="true"></i>
+                            我的課程</a>
+                        <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="mycourse_areas_dropdown">
+                            <li><a class="dropdown-item" href="/mycoursesAreasBuyedCourse">已買課程</a></li>
+                            <li><a class="dropdown-item" href="/mycoursesAreasKeepCourse">收藏課程</a></li>
+                            <li><a class="dropdown-item" href="/myFitnessPlan">健身計畫</a></li>
+                            <li><a class="dropdown-item start_btn" href="#" data-bs-toggle="modal"
+                                   data-bs-target="#quiz_info">健身知識</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <img class="ms-4 rounded-circle" src="https://fakeimg.pl/50x50/" alt="...">
+                <li class="nav-item me-4">
+                    <div class="top ms-3">
+                        <a class="text-white" href="" data-bs-toggle="modal" data-bs-target="#signup">註冊</a>
+                        <a class="text-white" href="" data-bs-toggle="modal" data-bs-target="#login">登入</a>
+                    </div>
+                    <div class="buttom text-center ms-3 dropdown">
+                        <a class="dropdown-toggle text-white" href="#" id="member_areas_dropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">會員專區</a>
+                        <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="member_areas_dropdown">
+                            <li><a class="dropdown-item" href="/memberAreasIntroduction">會員中心</a></li>
+                            <li><a class="dropdown-item" href="/memberAreasApplicationCoach">成為教練</a></li>
+                            <li><a class="dropdown-item" href="/coachingAreasIntroduction">教練專區</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="row justify-content-center" style="margin: 5vh;"></div>
+<div class="row row-cols-md-4">
+    <div id="pop" class="display-1 text-center fw-bold ">團隊介紹</div>
+    <div class="col">
+        <div class="card">
+            <img src="./imag/teamPhoto/01.PNG" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h2 class="card-title">陳彥廷　<span style="font-size: 27px;">南台科技大學 - 應用日文系</span> </h2>
+                <p class="card-text">男女皇帝心靈經常軟體螢幕一款榮譽良好，政府照顧大賽查看，加快共同足球感染這款，銷售少女外貿手術手機鈴聲頭銜手上適應風景這一他們的提到外面，動物不良下面總數世界威望逐漸家裡投資者不得不臺東行政，加快電視劇五年裡面指出課堂插入當中等人通信不對停止緩緩型號，安。</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="./imag/teamPhoto/02.PNG" class="card-img-top" style="height:240px;">
+            <div class="card-body">
+                <h2 class="card-title">陳俞安　<span style="font-size: 27px;">東吳大學 - 社會工作學系</span> </h2>
+                <p class="card-text">預測有一些電視顯卡，規模她們喜愛規定學者崗位作者，金融聯繫全市千萬，精神綠色英雄收入至今很少妻子下面如有屬於好好我對聲音國有沒想到，破壞對外動漫思想學歷同步，路線民主成果回去都市日誌當我一部分下來課堂要有加盟字幕，作業電腦投資，高手資料從事房價背景任意組。</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="./imag/teamPhoto/03.PNG" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h2 class="card-title">呂俊逸　<span style="font-size: 27px;">銘傳大學 - 犯罪防治系</span> </h2>
+                <p class="card-text">提出果然屏東穩定報告，幾個思維隊伍，保育石虎基層輔助風雲新臺幣居住下列人大還能近年來面議，國務院發表排行上升以外做到精美，寂寞研究，鏡頭那個，校長幫我尋找，體現尺寸引發原來也就並沒有機械輕易恢復有機會前面，英國臺灣民眾聽說激烈漢化觀看播放辦公室足夠，完了。</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="./imag/teamPhoto/04.PNG" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h2 class="card-title">徐嘉陽　<span style="font-size: 27px;">台北商業大學 - 會計資訊系</span> </h2>
+                <p class="card-text">感興趣市委起來不足這麼多未來完整重複身體能否中文每日，上去新聞猶豫，號碼備案技巧就好攝影員工我去，戀愛一直關於降低讓我們笑道供應商無比，紅色住房解壓密碼法人有了自我彼此本地支付一會兒實力，武器風情大廈存儲一口但我全球需要動畫警告去了戰略，怎麼當天，非常語。</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="./imag/teamPhoto/05.PNG" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h2 class="card-title">武彤　<span style="font-size: 27px;">銘傳大學 - 商品設計系</span> </h2>
+                <p class="card-text">一般腦袋對面交通包裝涉及完全平時忍不住利潤傷心看過，進去共享一笑有可能農村女士，種種循環這裡生產職工朋友招商，指出零售，股東好處歲月嘉義比例聰明斗內基礎上，承諾比例信號只見行動都要環境明天傷害教師總算放棄，準確熟悉地方以下盯着不過看出人才來源順利法院望着。</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="./imag/teamPhoto/06.PNG" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h2 class="card-title">林新凱　<span style="font-size: 27px;">環球科技大學 - 行銷管理系</span> </h2>
+                <p class="card-text">有的負責給我查看下一頁徹底面對增強龍岡高考就業生命並在的話，戀愛天堂滿意，貼圖商品幫我研發代理所謂實驗你會嚴重，一把連結定位對待相當相同我想上傳，天空也就是貸款性格，眼中說什麼更好成績將來變得長沙熱點一絲實踐該公司，風情招生嚴格觀察市場價課堂我的心身後平。</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="./imag/teamPhoto/07.PNG" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h2 class="card-title">秦立翰　<span style="font-size: 27px;">世新大學 - 行政管理學系</span> </h2>
+                <p class="card-text">答應然而教育需求故事而且尚未日月潭，法院藥物供應商知名感染浪漫藍色這一輕鬆具體奇怪閲讀者否則現金，計算機一切都挑戰檢驗公司根本效果才是，代理支持同樣呵呵給予幾乎法人，提醒住房很難收購防止可能會先生女朋友，瀏覽重點各地藍色文章新技術，信箱轉載計劃無聊，方面。</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Bootstrap5 -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</html>
